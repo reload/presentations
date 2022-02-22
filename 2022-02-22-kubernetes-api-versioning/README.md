@@ -253,6 +253,41 @@ Regel 4 a+b
 
 ## Videre læsning og referencer
 
+SIG-Architecture har en langt mere detaljeret vejledning til at lave [kompatible ændringer](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api_changes.md#on-compatibility)
+blandt andet er der en længere række af regler
+
+> An API change is considered compatible if it:
+>
+> * adds new functionality that is not required for correct behavior (e.g.,
+> does not add a new required field)
+> * does not change existing semantics, including:
+>   * the semantic meaning of default values _and behavior_
+>   * interpretation of existing API types, fields, and values
+>   * which fields are required and which are not
+>   * mutable fields do not become immutable
+>   * valid values do not become invalid
+>   * explicitly invalid values do not become valid
+>
+> Put another way:
+>
+> 1. Any API call (e.g. a structure POSTed to a REST endpoint) that succeeded
+> before your change must succeed after your change.
+> 2. Any API call that does not use your change must behave the same as it did
+> before your change.
+> 3. Any API call that uses your change must not cause problems (e.g. crash or
+> degrade behavior) when issued against an API servers that do not include your
+> change.
+> 4. It must be possible to round-trip your change (convert to different API
+> versions and back) with no loss of information.
+> 5. Existing clients need not be aware of your change in order for them to
+> continue to function as they did previously, even when your change is in use.
+> 6. It must be possible to rollback to a previous version of API server that
+> does not include your change and have no impact on API objects which do not use
+> your change.  API objects that use your change will be impacted in case of a
+> rollback.
+
+Efterfulgt af en række eksempler.
+
 Mumshad Mannambeth (instruktør på et af de mere populære CKA/CKAD kurser) har
 har lavet en [rigtig fin video](https://www.youtube.com/watch?v=_65Md2qar14)
 der gennemgår størstedelen af det jeg har dækket herover.
@@ -268,6 +303,5 @@ Jeg har desuden brugt følgende artikler
 
 Hvis man vil gå endnu dybere
 
-* SIG-Architectures vejledning til [hvordan man skal gå til at ændrer api'er](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api_changes.md#on-compatibility).
 * [Versions in CustomResourceDefinitions](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definition-versioning/)
  relevant når man selv skal til at lave objekt-typer.
