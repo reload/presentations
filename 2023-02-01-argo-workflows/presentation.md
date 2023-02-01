@@ -149,6 +149,8 @@ Skal ikke
   meget større end med en managed løsning. Jeg har brugt en måned på at kunne køre
   `pulumi up`.
 
+[Hal fixing a light bulb-v3mNf1v3rqc.webm](https://user-images.githubusercontent.com/999542/215997960-996eaced-0965-4a78-8a5e-df8c000860a1.webm)
+
 ## Alternativer
 
 * Hvis GDPR ikke er et problem: Github actions
