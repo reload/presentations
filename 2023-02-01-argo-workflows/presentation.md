@@ -8,7 +8,7 @@
   * Provisionering / Konfiguration af infrastruktur
   * ...
 * "Automatisering" betyder her "undgå at køre kommandoer fra en laptop"
-* Argo projektet er mest kendt for [Argo CD](https://argo-cd.readthedocs.io/en/stable/)
+* [Argo projektet](https://argoproj.github.io/) er mest kendt for [Argo CD](https://argo-cd.readthedocs.io/en/stable/)
   som vi også bruger og derfor var Argo Workflows et godt bud på
   noget der kunne løfte vores behov.
 
